@@ -16,62 +16,48 @@ body {
 
 /* Navbar */
 .navbar {
-  background: linear-gradient(135deg, #FF6B6B 0%, #d63031 100%);
-  /* Premium Red/Coral Gradient */
-  color: white;
+  background: white;
+  color: #2d3436;
   padding: 1rem 5%;
-  /* 5% padding for responsiveness */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 3px solid #FF6B6B;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: #d63031;
   text-decoration: none;
-  letter-spacing: 1px;
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.9);
+  color: #2d3436;
   text-decoration: none;
   margin-left: 2rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: white;
-  transform: translateY(-2px);
+  font-weight: 600;
 }
 
 .nav-links button {
   margin-left: 2rem;
   padding: 0.6rem 1.5rem;
-  background: white;
-  color: #d63031;
+  background: #FF6B6B;
+  color: white;
   border: none;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(255, 107, 107, 0.3);
 }
 
-.nav-links button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Layout Container */
+/* Container */
 .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -81,45 +67,72 @@ body {
 
 /* Hero Section */
 .hero {
-  background: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
   border-radius: 20px;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
   margin-bottom: 4rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  background-image: linear-gradient(to right, #ffffff, #fdfbfb);
-  position: relative;
-  overflow: hidden;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #2d3436, #000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: #636e72;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
+  color: #eee;
 }
 
 .search-bar {
-  padding: 1rem 2rem;
-  width: 60%;
-  max-width: 600px;
+  padding: 1.2rem 2rem;
+  width: 70%;
+  max-width: 700px;
   border-radius: 50px;
-  border: 2px solid #eee;
+  border: none;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
-  outline: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.search-bar:focus {
-  border-color: #FF6B6B;
-  box-shadow: 0 0 15px rgba(255, 107, 107, 0.2);
+/* Promotional Banners */
+.banner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.promo-banner {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  border-left: 5px solid #FF6B6B;
+}
+
+.promo-banner:hover {
+  transform: translateY(-5px);
+}
+
+.promo-content h3 {
+  margin: 0;
+  color: #d63031;
+  font-size: 1.5rem;
+}
+
+.promo-content p {
+  color: #636e72;
+  margin: 0.5rem 0 0 0;
 }
 
 /* Product Grid */
@@ -127,47 +140,33 @@ body {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #FF6B6B;
-  margin: 10px auto 0;
-  border-radius: 2px;
+  color: #2d3436;
 }
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .card {
   background: white;
   border-radius: 15px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  border: 1px solid #eee;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
+  height: 200px;
   width: 100%;
-  height: 250px;
   object-fit: cover;
-  border-bottom: 1px solid #eee;
 }
 
 .card-content {
@@ -175,14 +174,16 @@ body {
 }
 
 .card h3 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
-  color: #2d3436;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .price {
-  font-size: 1.5rem;
-  color: #FF6B6B;
+  font-size: 1.3rem;
+  color: #27ae60;
   font-weight: 700;
   display: block;
   margin-bottom: 1rem;
@@ -190,37 +191,45 @@ body {
 
 .btn {
   width: 100%;
-  padding: 1rem;
+  padding: 0.8rem;
   background: #2d3436;
   color: white;
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 .btn:hover {
   background: #000;
 }
 
-/* Form Box */
-.form-box {
-  background: white;
-  padding: 3rem;
-  border-radius: 15px;
-  max-width: 450px;
-  margin: 4rem auto;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+/* Contact / Footer Section */
+.footer-section {
+  background: #2d3436;
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  margin-top: 5rem;
   text-align: center;
 }
 
-.form-box h2 {
-  margin-bottom: 2rem;
-  color: #2d3436;
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.form-group {
-  text-align: left;
+.contact-item h4 {
+  color: #FF6B6B;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-item p {
+  color: #b2bec3;
+  line-height: 1.6;
 }

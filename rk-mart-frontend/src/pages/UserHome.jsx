@@ -18,62 +18,83 @@ const UserHome = ({ user }) => {
 
     return (
         <div>
+            {/* Hero Section */}
             <div className="hero">
-                <img src="/logo.jpg" alt="RK MART Logo" style={{ width: '180px', marginBottom: '1.5rem', borderRadius: '50%', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }} />
-                <h1>Welcome to RK MART</h1>
-                <p>India's Freshest Online Supermarket</p>
-                <div style={{ position: 'relative', display: 'inline-block', width: '60%' }}>
+                <img src="/logo.jpg" alt="RK MART Logo" style={{ width: '150px', borderRadius: '50%', marginBottom: '1rem', border: '3px solid white' }} />
+                <h1>RK MART</h1>
+                <p>Near Ambedkar Chowrasta, Bodhan</p>
+                <div style={{ position: 'relative', display: 'inline-block', width: '70%' }}>
                     <input
                         type="text"
                         className="search-bar"
-                        placeholder="Search for rice, oil, dal..."
-                        style={{ width: '100%' }}
+                        placeholder="Search for groceries..."
                     />
                     <button style={{
-                        position: 'absolute', right: '5px', top: '5px', height: '90%',
+                        position: 'absolute', right: '5px', top: '5px', height: '85%',
                         background: '#FF6B6B', color: 'white', border: 'none',
                         borderRadius: '50px', padding: '0 2rem', cursor: 'pointer', fontWeight: 'bold'
                     }}>Search</button>
                 </div>
             </div>
 
-            <h2 className="section-title">Daily Essentials & Groceries</h2>
+            {/* Promotional Banners (Templates in Middle) */}
+            <div className="banner-grid">
+                <div className="promo-banner">
+                    <div className="promo-content">
+                        <h3>Super Saver Deal</h3>
+                        <p>Flat 20% OFF on Rice & Dals</p>
+                    </div>
+                    <span style={{ fontSize: '2.5rem' }}>🍚</span>
+                </div>
+                <div className="promo-banner">
+                    <div className="promo-content">
+                        <h3>Fresh Vegetables</h3>
+                        <p>Farm fresh daily morning</p>
+                    </div>
+                    <span style={{ fontSize: '2.5rem' }}>🥦</span>
+                </div>
+                <div className="promo-banner">
+                    <div className="promo-content">
+                        <h3>Instant Delivery</h3>
+                        <p>Free delivery above ₹500</p>
+                    </div>
+                    <span style={{ fontSize: '2.5rem' }}>🚚</span>
+                </div>
+            </div>
+
+            {/* Products Section */}
+            <h2 className="section-title">Best Selling Groceries</h2>
             <div className="dashboard-grid">
                 {products.map(p => (
                     <div className="card" key={p.id}>
-                        <div style={{ overflow: 'hidden', height: '220px', borderTopLeftRadius: '15px', borderTopRightRadius: '15px' }}>
-                            <img src={p.image} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }} />
-                        </div>
-                        <div className="card-content" style={{ padding: '1.5rem' }}>
-                            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', height: '2.4em', overflow: 'hidden' }}>{p.name}</h3>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
-                                <span className="price" style={{ color: '#27ae60', fontSize: '1.4rem', fontWeight: 'bold' }}>₹{p.price}</span>
-                                <button className="btn" style={{ width: 'auto', padding: '0.5rem 1.5rem', fontSize: '0.9rem', background: '#FF6B6B' }}>ADD +</button>
-                            </div>
+                        <img src={p.image} alt={p.name} />
+                        <div className="card-content">
+                            <h3>{p.name}</h3>
+                            <span className="price">₹{p.price}</span>
+                            <button className="btn">Add to Cart</button>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <div style={{ marginTop: '5rem', textAlign: 'center', padding: '3rem', background: '#e9ecef', borderRadius: '20px' }}>
-                <h2 style={{ marginBottom: '2rem' }}>Why Shop With Us?</h2>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }}>
-                    <div style={{ flex: '1', minWidth: '200px' }}>
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🚚</div>
-                        <h3>Super Fast Delivery</h3>
-                        <p>Get your groceries delivered within 2 hours.</p>
+            {/* Footer / Contact Section */}
+            <div className="footer-section">
+                <h2 style={{ marginBottom: '3rem', borderBottom: '1px solid #555', paddingBottom: '1rem', display: 'inline-block' }}>Visit RK MART Today</h2>
+                <div className="contact-grid">
+                    <div className="contact-item">
+                        <h4>📍 ADDRESS</h4>
+                        <p>Near Ambedkar Chowrasta,<br />Narsi Road, Bodhan,<br />Telangana - 503185</p>
                     </div>
-                    <div style={{ flex: '1', minWidth: '200px' }}>
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🥦</div>
-                        <h3>Farm Fresh</h3>
-                        <p>Vegetables and fruits directly from farmers.</p>
+                    <div className="contact-item">
+                        <h4>📞 CONTACT</h4>
+                        <p>Mobile: +91 7702312567<br />Email: support@rkmart.com</p>
                     </div>
-                    <div style={{ flex: '1', minWidth: '200px' }}>
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💯</div>
-                        <h3>Best Prices</h3>
-                        <p>Cheaper than your local mandi.</p>
+                    <div className="contact-item">
+                        <h4>⏰ OPENING HOURS</h4>
+                        <p>Monday - Sunday<br />8:00 AM - 10:00 PM</p>
                     </div>
                 </div>
+                <p style={{ marginTop: '3rem', color: '#777', fontSize: '0.9rem' }}>© 2026 RK MART. All rights reserved.</p>
             </div>
         </div>
     );
